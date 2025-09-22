@@ -3,7 +3,7 @@ Este es un prototipo funcional de un juego de rol táctico por turnos (Strategy 
 
 El objetivo de este proyecto es demostrar habilidades fundamentales en el desarrollo front-end, incluyendo la lógica de programación, la manipulación del DOM y la gestión del estado de una aplicación interactiva.
 
-[Enlace al juego en vivo aquí - Reemplaza esto cuando tengas el link de GitHub Pages]
+https://alexisgiovani.github.io/srpg-prototype/
 
 Características Implementadas
 Tablero de Juego Interactivo: El tablero está generado dinámicamente con CSS Grid y responde a los clics del usuario.
