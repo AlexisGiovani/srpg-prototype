@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi SRPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mi Juego SRPG</h1>
+
+    <div id="game-container">
+        
+        <div id="game-column">
+            <div id="game-grid"></div>
+            <div id="player-menu">
+                <button id="move-button">Mover</button>
+                <button id="attack-button">Atacar</button>
+                <button id="end-turn-button">Terminar Turno</button>
+            </div>
+        </div>
+
+        <div id="stats-column">
+            <div id="stats-panel">
+                <h2 id="stat-name">-- Selecciona un personaje --</h2>
+                
+                <div id="action-indicators">
+                    <div id="action-standard" class="action-pip">Standard</div>
+                    <div id="action-move" class="action-pip">Move</div>
+                    <div id="action-swift" class="action-pip">Swift</div>
+                    <div id="action-reaction" class="action-pip">Reaction</div>
+                </div>
+                <hr>
+                
+                <p><strong>HP:</strong> <span id="stat-hp">--</span> / <span id="stat-max-hp">--</span></p>
+                <p><strong>AC:</strong> <span id="stat-ac">--</span></p>
+                <hr>
+                <p><strong>Fuerza (STR):</strong> <span id="stat-str">--</span> (<span id="stat-str-mod">--</span>)</p>
+                <p><strong>Destreza (DEX):</strong> <span id="stat-dex">--</span> (<span id="stat-dex-mod">--</span>)</p>
+                <p><strong>Constitución (CON):</strong> <span id="stat-con">--</span> (<span id="stat-con-mod">--</span>)</p>
+                <p><strong>Inteligencia (INT):</strong> <span id="stat-int">--</span> (<span id="stat-int-mod">--</span>)</p>
+                <p><strong>Sabiduría (WIS):</strong> <span id="stat-wis">--</span> (<span id="stat-wis-mod">--</span>)</p>
+                <p><strong>Carisma (CHA):</strong> <span id="stat-cha">--</span> (<span id="stat-cha-mod">--</span>)</p>
+                <hr>
+                <p><strong>Salvaciones:</strong></p>
+                <ul>
+                    <li><strong>Fortaleza:</strong> <span id="stat-fort">--</span></li>
+                    <li><strong>Reflejos:</strong> <span id="stat-ref">--</span></li>
+                    <li><strong>Voluntad:</strong> <span id="stat-will">--</span></li>
+                </ul>
+                <p><strong>Ataque (To-Hit):</strong> <span id="stat-hit">--</span></p>
+                
+                <hr>
+                <p><strong>Arma:</strong> <span id="stat-weapon-name">--</span></p>
+                <p><strong>Daño:</strong> <span id="stat-weapon-damage">--</span></p>
+                <p><strong>Rango:</strong> <span id="stat-weapon-range">--</span></p>
+
+            </div>
+        </div>
+
+    </div> 
+    
+    <div id="message-log-container">
+        <h3>Registro de Combate</h3>
+        <div id="message-log"></div>
+    </div>
+
+    <!-- Script Loading Order:
+        1. Data (Equipment, Entities)
+        2. Helper Modules (UI, Combat)
+        3. Main Game Logic
+    -->
+	<script src="equipment.js"></script> 
+	<script src="entities.js"></script>
+    <script src="ui.js"></script>
+    <script src="combat.js"></script>
+	<script src="game.js"></script>
+</body>
+</html>

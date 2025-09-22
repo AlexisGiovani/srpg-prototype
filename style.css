@@ -1,0 +1,134 @@
+/* --- Estilos Generales --- */
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+}
+h1, h2 { text-align: center; }
+
+/* --- Contenedor Principal --- */
+#game-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+/* --- Columna del Juego --- */
+#game-column { text-align: center; }
+
+/* --- Estilos para el Tablero con CSS Grid --- */
+#game-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 30px);
+    grid-template-rows: repeat(10, 30px);
+    border: 2px solid #555;
+    background-color: #000;
+}
+
+.grid-cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: #444;
+    cursor: pointer;
+}
+
+.grid-cell.entity {
+    color: #f0f0f0;
+    font-weight: normal;
+}
+
+.grid-cell.selected {
+    background-color: #3a3d41;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+}
+
+/* --- Menú y Botones --- */
+#player-menu { margin-top: 20px; }
+button { background-color: #3c3c3c; color: #f0f0f0; border: 2px solid #555; padding: 10px 20px; font-family: 'Courier New', Courier, monospace; font-size: 16px; cursor: pointer; }
+button:hover { background-color: #555; }
+button.active { background-color: #007acc; border-color: #00aaff; }
+button:disabled { background-color: #252526; color: #555; cursor: not-allowed; border-color: #444; }
+
+/* --- Panel de Estadísticas --- */
+#stats-panel { width: 280px; border: 2px solid #555; background-color: #252526; padding: 0 20px 20px 20px; text-align: left; }
+#stats-panel h2 { text-align: center; font-size: 1.1em; }
+#stats-panel p { margin: 8px 0; }
+#stats-panel ul { list-style-type: none; padding-left: 15px; margin: 5px 0; }
+#stats-panel hr { border: none; border-top: 1px solid #555; margin: 15px 0; }
+#stats-panel span { color: #4ec9b0; font-weight: bold; }
+
+/* --- Estilos para Indicadores de Acción --- */
+#action-indicators {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+
+.action-pip {
+    padding: 4px 8px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+.action-pip.available {
+    background-color: #3c3c3c;
+    color: #f0f0f0;
+}
+
+.action-pip.spent {
+    background-color: #252526;
+    color: #666;
+    border-color: #444;
+}
+
+.action-pip.highlight {
+    background-color: #ffc83d;
+    color: #1e1e1e;
+    border-color: #fff;
+    transform: scale(1.1);
+}
+/* ... (todos los estilos anteriores sin cambios) ... */
+
+/* --- NUEVO: Estilos para el Registro de Combate --- */
+#message-log-container {
+    margin: 30px auto;
+    width: 80%;
+    max-width: 700px;
+}
+
+#message-log {
+    background-color: #000;
+    border: 2px solid #555;
+    height: 150px;
+    overflow-y: auto; /* Para que aparezca una barra de scroll si hay muchos mensajes */
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+/* Estilos para diferentes tipos de mensajes */
+.log-message {
+    margin: 0 0 5px 0;
+}
+.log-message.damage {
+    color: #ff8a8a; /* Rojo para el daño */
+    font-weight: bold;
+}
+.log-message.miss {
+    color: #a0a0a0; /* Gris para los fallos */
+    font-style: italic;
+}
+.log-message.info {
+    color: #8aafff; /* Azul para información */
+}
